@@ -90,7 +90,7 @@ class Login_View(APIView):
                 if login_type == "email":
                     user = User.objects.filter(email=loginid).first()
                 else:
-                    profile = models.Profile.filter(mobile=loginid).first()
+                    profile = models.Profile.objects.filter(mobile=loginid).first()
                     if profile:
                         user = profile.user
                     else:
